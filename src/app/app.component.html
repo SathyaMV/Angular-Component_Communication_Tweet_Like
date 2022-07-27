@@ -1,0 +1,25 @@
+<div class="container-fluid p-3">
+  <div class="card float-center w-50">
+      <div class="d-flex p-2">
+        <img [src]="tweet.imageURL" width="100px" height="100px" alt="image">
+      <p class="mt-4 p-3">{{ tweet.name }}</p>
+      </div>
+      <p class="p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quo illum eligendi esse quas libero quod tenetur adipisci id laborum nam, praesentium possimus voluptates similique. Architecto rerum voluptate odio obcaecati aperiam nisi ea nemo labore sapiente magni, cum impedit incidunt ipsa natus commodi veritatis. Voluptas nam illum perferendis inventore doloribus?</p>
+      <div class="d-flex justify-content-evenly pb-3">
+        <div>
+          <i class="bi bi-chat"> {{ tweet.comments }} </i>
+        </div>
+        <div>
+          <i class="bi bi-arrow-left-right"> {{ tweet.retweetCount }}</i>
+        </div>
+        <div>
+          <app-child [likesCount]="tweet.likesCount" (cout)="onLiked($event)"></app-child>
+          <span> <i> {{ liked }} </i> </span>
+        </div>
+        <div>
+          <i class="bi bi-upload"></i>
+        </div>
+      </div>
+  </div>
+</div>
+
